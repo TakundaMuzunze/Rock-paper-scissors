@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<head>
+    <title>Rock Paper Scissors Game</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+        <h1>Rock paper scissors</h1>
+    </header>
+    <main>
+        <div class="score-container">
+            <div class="score-component" id="player-score">
+                <p>Player:</p>
+                <p class="score">0</p>
+            </div>
+            <div class="score-component" id="cpu-score">
+                <p>Computer:</p>
+                <p class="score">0</p>
+            </div>
+        </div>
+   
+        <section id="game">
+            <div class="subtitle">
+                <h2>Choose your move</h2>
+            </div>
+            <div class="game-area">
+                <p class="game-message" id="message"></p>
+                <div class="controls">
+                    <div class="rock">
+                        <i class="fa fa-hand-rock-o"></i>
+                        <button>Rock</button>
+                    </div>
+                    <div class="paper">
+                        <i class="fa fa-hand-paper-o"></i>
+                        <button>Paper</button>
+                    </div>
+                    <div class="scissors">
+                        <i class="fa fa-hand-scissors-o"></i>
+                        <button>Scissors</button>
+                    </div>
+                </div>
+                <p class="game-message" id="winner-message"></p>
+            </div>
+
+        </section>
+    </main>
+</body>
+<script src="scripts.js"></script>
+</html>
