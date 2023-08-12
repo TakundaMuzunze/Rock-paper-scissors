@@ -6,13 +6,20 @@ const displayedMessage = document.getElementById('winner-message');
 let playerScore = document.getElementById('player-score');
 let computerScore = document.getElementById('cpu-score');
 
-
-
 const game = () => {
     playerScore.textContent = 0;
     computerScore.textContent = 0;
+};
 
-
+const updateMessage = () => {
+    if (playerScore.textContent === "5"){
+        displayedMessage.innerHTML = "You were first to 5, you win the game!";
+        game();
+    }
+    else if (computerScore.textContent === "5"){
+        displayedMessage.innerHTML = "Computer was first to 5, you lost the game!";
+        game();
+    }
 };
 
 const updateResults = () => {
@@ -45,16 +52,19 @@ rockButton.addEventListener("click", function() {
     playerChoice = "rock";
     computerChoice = generatedChoice();
     updateResults();
+    updateMessage();
 });
 
 paperButton.addEventListener("click", function() {
     playerChoice = "paper";
     computerChoice = generatedChoice();
     updateResults();
+    updateMessage();
 });
 
 scissorsButton.addEventListener("click", function() {
     playerChoice = "scissors";
     computerChoice = generatedChoice();
     updateResults();
+    updateMessage();
 });

@@ -2,6 +2,7 @@
 <head>
     <title>Rock Paper Scissors Game</title>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -12,41 +13,41 @@
     </header>
     <main>
         <div class="score-container">
-            <div class="score-component" id="player-score">
+            <div class="score-component" >
                 <p>Player:</p>
-                <p class="score">0</p>
+                <p class="score" id="player-score">0</p>
             </div>
-            <div class="score-component" id="cpu-score">
+            <div class="score-component" >
                 <p>Computer:</p>
-                <p class="score">0</p>
+                <p class="score" id="cpu-score">0</p>
             </div>
         </div>
    
         <section id="game">
             <div class="subtitle">
                 <h2>Choose your move</h2>
+                <p class="game-message" id="winner-message"></p>
             </div>
             <div class="game-area">
                 <p class="game-message" id="message"></p>
                 <div class="controls">
-                    <div class="rock">
+                    <div id="rock">
                         <i class="fa fa-hand-rock-o"></i>
                         <button>Rock</button>
                     </div>
-                    <div class="paper">
+                    <div id="paper">
                         <i class="fa fa-hand-paper-o"></i>
                         <button>Paper</button>
                     </div>
-                    <div class="scissors">
+                    <div id="scissors">
                         <i class="fa fa-hand-scissors-o"></i>
                         <button>Scissors</button>
                     </div>
                 </div>
-                <p class="game-message" id="winner-message"></p>
             </div>
 
         </section>
     </main>
+    <script src="scripts.js"></script>
 </body>
-<script src="scripts.js"></script>
 </html>
