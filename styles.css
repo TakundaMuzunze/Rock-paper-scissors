@@ -49,11 +49,27 @@ header{
     padding: 60px 0;
 }
 
+.restart-btn{
+    border-radius: 10px;
+    padding: 14px 28px;
+    background-color: #3a2895;
+    display: none;
+}
+
+.show-btn{
+    margin: 0 auto;
+    display: block;
+}
+
 .controls{
     display: flex;
     justify-content: center;
     gap: 40px;
     padding: 20px 0;
+}
+
+.hide-btns{
+    display: none;
 }
 
 .controls > div {

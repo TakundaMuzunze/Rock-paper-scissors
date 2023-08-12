@@ -1,6 +1,8 @@
 const rockButton = document.getElementById('rock');
 const paperButton = document.getElementById('paper');
 const scissorsButton = document.getElementById('scissors');
+const controlButtons = document.querySelector('.game-area');
+const restartButton = document.getElementById('restart');
 const displayedMessage = document.getElementById('winner-message');
 
 let playerScore = document.getElementById('player-score');
@@ -9,16 +11,21 @@ let computerScore = document.getElementById('cpu-score');
 const game = () => {
     playerScore.textContent = 0;
     computerScore.textContent = 0;
+    restartButton.classList.remove('show-btn');
+    controlButtons.classList.remove('hide-btns');
+    displayedMessage.innerHTML = '';
 };
 
 const updateMessage = () => {
     if (playerScore.textContent === "5"){
         displayedMessage.innerHTML = "You were first to 5, you win the game!";
-        game();
+        controlButtons.classList.add('hide-btns');
+        restartButton.classList.add('show-btn');
     }
     else if (computerScore.textContent === "5"){
         displayedMessage.innerHTML = "Computer was first to 5, you lost the game!";
-        game();
+        controlButtons.classList.add('hide-btns');
+        restartButton.classList.add('show-btn');
     }
 };
 
@@ -67,4 +74,8 @@ scissorsButton.addEventListener("click", function() {
     computerChoice = generatedChoice();
     updateResults();
     updateMessage();
+});
+
+restartButton.addEventListener("click", function() {
+    game();
 });
