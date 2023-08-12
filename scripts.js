@@ -1,30 +1,60 @@
 const rockButton = document.getElementById('rock');
 const paperButton = document.getElementById('paper');
 const scissorsButton = document.getElementById('scissors');
+const displayedMessage = document.getElementById('winner-message');
+
 let playerScore = document.getElementById('player-score');
 let computerScore = document.getElementById('cpu-score');
 
+
+
 const game = () => {
-    playerScore.textContent = 1;
+    playerScore.textContent = 0;
     computerScore.textContent = 0;
 
 
 };
 
+const updateResults = () => {
+    if (playerChoice === computerChoice){
+        displayedMessage.innerHTML = "It's a tie!";
+    }
+    else if ((playerChoice === 'rock' && computerChoice === 'scissors') ||
+        (playerChoice === 'paper' && computerChoice === 'rock') ||
+        (playerChoice === 'scissors' && computerChoice === 'paper')){
+        playerScore.textContent = parseInt(playerScore.textContent) + 1;
+        displayedMessage.innerHTML = "You chose " + playerChoice + ", you win!";
+    }
+    else if((playerChoice === 'rock' && computerChoice === 'paper') ||
+        (playerChoice === 'paper' && computerChoice === 'scissors') ||
+        (playerChoice === 'scissors' && computerChoice === 'rock')){
+        computerScore.textContent = parseInt(computerScore.textContent) + 1;
+        displayedMessage.innerHTML = "You chose " + playerChoice + ", computer wins!";
+    };
+};
+
 const generatedChoice = () =>{
     const choices = ["rock", "paper", "scissors"];
     const randomChoice = Math.floor(Math.random () * choices.length);
-    const cpuChoice = choices[randomIndex];
+    const cpuChoice = choices[randomChoice];
     return cpuChoice;
 }
 
 // Event listeners for each button
-// rockButton.addEventListener("click", function() {
-//     const playerChoice = "rock";
-//     const computerChoice = generatedChoice();
-    
-// });
+rockButton.addEventListener("click", function() {
+    playerChoice = "rock";
+    computerChoice = generatedChoice();
+    updateResults();
+});
 
-// paperButton.addEventListener("click", function() {});
+paperButton.addEventListener("click", function() {
+    playerChoice = "paper";
+    computerChoice = generatedChoice();
+    updateResults();
+});
 
-// scissorsButton.addEventListener("click", function() {});
+scissorsButton.addEventListener("click", function() {
+    playerChoice = "scissors";
+    computerChoice = generatedChoice();
+    updateResults();
+});
