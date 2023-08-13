@@ -20,7 +20,7 @@ This Rock Paper Scissors game is designed to provide a fun and interactive way f
 - Git
 
 ## 💻 Live Demo
-You can play the Rock Paper Scissors game live by visiting this [link](easy-rock-paper-scissors.netlify.app).
+You can play the Rock Paper Scissors game live by visiting this [link](https://easy-rock-paper-scissors.netlify.app).
 
 ## ⚙️ Installation
 1. Clone this repository.
